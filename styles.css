@@ -1,48 +1,33 @@
 body {
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    margin: 0;
+    background-color: #1E1E2E;
 }
 
-.categories-container {
+.circle-container {
     position: relative;
-    width: 300px;
-    height: 300px;
-    background-color: white;
-    border-radius: 50%;
-    padding: 15px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 50%; /* Adjust the container size as needed */
+    height: 80%; /* Adjust the container size as needed */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
-.category {
+.circle {
     position: absolute;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
     border-radius: 50%;
-    background-color: #3498db;
-    transition: all 0.3s;
-    transform: translate(-50%, -50%); /* Center the circle based on its position */
+    text-align: center;
+    line-height: 2;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
 
-#sports {
-    background-color: #dc8a78;
+.circle:hover {
+    transform: scale(1.2);
 }
-
-#enterainment {
-    background-color: #dd7878;
-}
-
-#technology {
-    background-color: #ea76cb;
-}
-
-#health {
-    background-color: #8839ef;
-}
-
-#travel {
-    background-color: #d20f39;
-}
-
-/* Add colors for other categories as needed */

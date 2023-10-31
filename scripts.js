@@ -1,42 +1,44 @@
-// Define category sizes
-const categorySizes = {
-    "sports": 100,
-    "entertainment": 150,
-    "technology": 200,
-    "health": 180,
-    "travel": 160
-};
+const circleData = [
+    { category: 'Technology', size: 80 },
+    { category: 'Art', size: 120 },
+    { category: 'Cooking', size: 100 },
+    { category: 'Travel', size: 90 },
+    { category: 'Science', size: 110 },
+    { category: 'Fashion', size: 70 },
+    { category: 'Music', size: 95 },
+    { category: 'Sports', size: 85 },
+    // Add more categories and sizes as needed
+];
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Find the center of the categories-container
-    const container = document.querySelector('.categories-container');
-    const containerCenterX = container.offsetWidth / 2;
-    const containerCenterY = container.offsetHeight / 2;
+function createCircles() {
+    const container = document.getElementById('circleContainer');
+    const width = container.offsetWidth;
+    const height = container.offsetHeight;
 
-    // Number of categories
-    const numCategories = Object.keys(categorySizes).length;
+    const svg = d3.select(container)
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
 
-    // Angle between each category
-    const angleBetween = 360 / numCategories;
+    const circles = svg.selectAll("circle")
+        .data(circleData)
+        .enter()
+        .append("circle")
+        .attr("r", (d) => d.size)
+        .style("fill", "#007bff")
+        .style("opacity", 0.8);
 
-    let currentAngle = 0;  // Start at 0 degrees
+    const simulation = d3.forceSimulation(circleData)
+        .force("charge", d3.forceManyBody().strength(2000))
+        .force("center", d3.forceCenter(width / 2, height / 2))
+        .force("collision", d3.forceCollide().radius((d) => d.size + 5))
+        .on("tick", () => {
+            circles
+                .attr("cx", (d) => d.x)
+                .attr("cy", (d) => d.y);
+        });
 
-    for (let category in categorySizes) {
-        const element = document.querySelector(`#${category}`);
-        if (element) {
-            const radius = (container.offsetWidth - categorySizes[category]) / 2;
+    simulation.alpha(1).restart();
+}
 
-            // Use trigonometry to position each category
-            const x = containerCenterX + radius * Math.cos(currentAngle * (Math.PI / 180)) - categorySizes[category] / 2;
-            const y = containerCenterY + radius * Math.sin(currentAngle * (Math.PI / 180)) - categorySizes[category] / 2;
-
-            element.style.left = `${x}px`;
-            element.style.top = `${y}px`;
-
-            element.style.width = `${categorySizes[category]}px`;
-            element.style.height = `${categorySizes[category]}px`;
-
-            currentAngle += angleBetween;
-        }
-    }
-});
+window.onload = createCircles;
