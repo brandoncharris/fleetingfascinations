@@ -15,6 +15,9 @@ function createCircles() {
     const width = container.offsetWidth;
     const height = container.offsetHeight;
 
+    // Generate a random strength value between 500 and 3000
+    const randomStrength = Math.random() * (3000 - 500) + 500;
+
     const svg = d3.select(container)
         .append("svg")
         .attr("width", width)
@@ -29,9 +32,9 @@ function createCircles() {
         .style("opacity", 0.8);
 
     const simulation = d3.forceSimulation(circleData)
-        .force("charge", d3.forceManyBody().strength(2000))
+        .force("charge", d3.forceManyBody().strength(randomStrength)) // Use the random strength
         .force("center", d3.forceCenter(width / 2, height / 2))
-        .force("collision", d3.forceCollide().radius((d) => d.size + 5))
+        .force("collision", d3.forceCollide().radius((d) => d.size + 1))
         .on("tick", () => {
             circles
                 .attr("cx", (d) => d.x)
