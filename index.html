@@ -2,31 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleeting Fascinations</title>
+    <title>Category Visualization</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Fleeting Fascinations</h1>
-        <h2>Discover, Deep-Dive, Dip.</h2>
-    </header>
-    <div class="categories">
-        <div class="category-icon technology" data-content="Discover the latest in tech.">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#181525">
-                <!-- Placeholder icon for Technology -->
-                <path d="M12 2C6.486 2 2 6.487 2 12s4.486 10 10 10 10-4.487 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path>
-            </svg>
-        </div>
-        <div class="category-icon arts" data-content="Explore creative projects.">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#181525">
-                <!-- Placeholder icon for Art & Crafts -->
-                <path d="M12 2C6.486 2 2 6.487 2 12s4.486 10 10 10 10-4.487 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path>
-            </svg>
-        </div>
-        <!-- ... Add more icons as desired ... -->
+    <div class="categories-container">
+        <div class="category" id="tech"></div>
+        <div class="category" id="arts"></div>
+        <!-- ... other categories ... -->
     </div>
     <script src="scripts.js"></script>
 </body>
