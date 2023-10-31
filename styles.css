@@ -22,14 +22,27 @@ body {
     border-radius: 50%;
     background-color: #3498db;
     transition: all 0.3s;
+    transform: translate(-50%, -50%); /* Center the circle based on its position */
 }
 
-#tech {
-    background-color: #e74c3c;
+#sports {
+    background-color: #dc8a78;
 }
 
-#arts {
-    background-color: #2ecc71;
+#enterainment {
+    background-color: #dd7878;
+}
+
+#technology {
+    background-color: #ea76cb;
+}
+
+#health {
+    background-color: #8839ef;
+}
+
+#travel {
+    background-color: #d20f39;
 }
 
 /* Add colors for other categories as needed */
