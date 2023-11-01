@@ -4,30 +4,20 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #1E1E2E;
+    background-color: #181825;
 }
 
 .circle-container {
     position: relative;
-    width: 50%; /* Adjust the container size as needed */
-    height: 80%; /* Adjust the container size as needed */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    width: 97%; /* Adjust the container size as needed */
+    height: 95%; /* Adjust the container size as needed */
+    background-color: #1E1E2E;
+    border-radius: 10px; /* Adjust the border radius as needed */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Box shadow properties */
 }
 
-.circle {
-    position: absolute;
-    background-color: #007bff;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 2;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+.custom-circle {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Box shadow properties */
 }
 
-.circle:hover {
-    transform: scale(1.2);
-}
+
